@@ -1,4 +1,15 @@
 import { useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
+
+// Temporary placeholder sections
+const SECTIONS = [
+  "home",
+  "about",
+  "skills",
+  "projects",
+  "education",
+  "contact",
+];
 
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -19,17 +30,28 @@ function App() {
   }, [isDark]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-      <h1 className="text-4xl font-extrabold text-blue-600 dark:text-blue-400">
-        Theme test
-      </h1>
-      <p className="font-mono text-sm">Body font + mono font check</p>
-      <button
-        onClick={() => setIsDark((prev) => !prev)}
-        className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-500"
-      >
-        Switch to {isDark ? "light" : "dark"} mode
-      </button>
+    <div className="min-h-screen">
+      <Navbar
+        isDark={isDark}
+        onToggleTheme={() => setIsDark((prev) => !prev)}
+      />
+
+      <main>
+        {SECTIONS.map((id) => (
+          <section
+            key={id}
+            id={id}
+            className="flex min-h-screen items-center justify-center border-b border-slate-200 dark:border-neutral-800"
+          >
+            <h2 className="text-4xl font-extrabold capitalize">
+              {id}{" "}
+              <span className="font-mono text-sm font-normal text-slate-500 dark:text-neutral-500">
+                (temporary)
+              </span>
+            </h2>
+          </section>
+        ))}
+      </main>
     </div>
   );
 }
