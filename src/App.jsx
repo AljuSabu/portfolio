@@ -1,41 +1,36 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [isDark, setIsDark] = useState(() => {
+    try {
+      return localStorage.getItem("theme") !== "light";
+    } catch {
+      return true;
+    }
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark);
+    try {
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    } catch {
+      /* storage unavailable, ignore */
+    }
+  }, [isDark]);
+
   return (
-    <>
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[#030303]" />
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-600/50 blur-[120px]"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2],
-            x: [0, -100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-600/50 blur-[120px]"
-        />
-        <div className="absolute inset-0 bg-[url('public/noice.png')] opacity-20 brightness-100 contrast-150 pointer-events-none mix-blend-overlay"></div>
-      </div>
-    </>
+    <div className="min-h-screen flex flex-col items-center justify-center gap-4">
+      <h1 className="text-4xl font-extrabold text-blue-600 dark:text-blue-400">
+        Theme test
+      </h1>
+      <p className="font-mono text-sm">Body font + mono font check</p>
+      <button
+        onClick={() => setIsDark((prev) => !prev)}
+        className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-500"
+      >
+        Switch to {isDark ? "light" : "dark"} mode
+      </button>
+    </div>
   );
 }
 
