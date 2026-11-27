@@ -126,7 +126,7 @@ export default function Hero() {
               className="text-5xl font-extrabold leading-[1.05] tracking-tighter sm:text-6xl lg:text-7xl"
             >
               <span className="block text-stone-500 dark:text-neutral-500">
-                Hi, I’m
+                Hi, I'm
               </span>
               <span className="block text-stone-950 dark:text-white">
                 {name}
@@ -242,7 +242,7 @@ export default function Hero() {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-stone-100 text-stone-400 dark:bg-neutral-900 dark:text-neutral-600">
                   <FiUser size={72} />
                   <span className="font-mono text-xs">
-                    your photo goes here
+                    photo goes here
                   </span>
                 </div>
               )}

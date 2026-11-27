@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import About from "./components/About";
 
 // Temporary placeholder sections
-const SECTIONS = ["about", "skills", "projects", "education", "contact"];
+const SECTIONS = ["skills", "projects", "education", "contact"];
 
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -32,6 +33,8 @@ function App() {
 
       <main>
         <Hero />
+
+        <About />
 
         {SECTIONS.map((id) => (
           <section
