@@ -28,10 +28,10 @@ const NAV_LINKS = [
 const SCROLL_THRESHOLD = 80;
 
 const iconBtn =
-  "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-slate-600 dark:text-zinc-400 hover:bg-slate-900/5 dark:hover:bg-white/10 hover:text-slate-900 dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500";
+  "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-stone-600 dark:text-neutral-400 hover:bg-stone-900/5 dark:hover:bg-white/10 hover:text-stone-900 dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500";
 
 const resumeBtn =
-  "inline-flex items-center gap-1.5 rounded-full bg-blue-600 px-4 py-1.5 text-sm font-semibold text-white shadow-sm shadow-blue-600/30 hover:bg-blue-500 active:bg-blue-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-900";
+  "inline-flex items-center gap-1.5 rounded-full bg-stone-900 px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-stone-700 active:bg-stone-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:bg-white dark:text-black dark:hover:bg-neutral-200 dark:active:bg-neutral-300 dark:focus-visible:ring-offset-black";
 
 export default function Navbar({ isDark, onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
@@ -89,8 +89,8 @@ export default function Navbar({ isDark, onToggleTheme }) {
   const linkClass = (id) =>
     `rounded-full px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
       activeId === id
-        ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
-        : "text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white"
+        ? "bg-blue-500/10 text-blue-600 dark:bg-blue-500/15 dark:text-blue-400"
+        : "text-stone-600 dark:text-neutral-400 hover:text-stone-900 dark:hover:text-white"
     }`;
 
   return (
@@ -104,7 +104,7 @@ export default function Navbar({ isDark, onToggleTheme }) {
       <div
         className={`pointer-events-auto mx-auto flex w-full items-center justify-between rounded-full border transition-all duration-300 ease-out motion-reduce:transition-none ${
           scrolled
-            ? "mt-3 max-w-26 px-2 py-1.5 lg:max-w-170 lg:px-4 lg:py-2 border-slate-200/80 dark:border-white/10 bg-white/70 dark:bg-zinc-900/60 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-black/40"
+            ? "mt-3 max-w-26 px-2 py-1.5 lg:max-w-170 lg:px-4 lg:py-2 border-stone-300 dark:border-white/20 bg-white/80 dark:bg-black/70 backdrop-blur-xl shadow-lg shadow-black/10 dark:shadow-black/60"
             : "mt-0 max-w-[min(100%,80rem)] px-2 py-3 lg:px-4 lg:py-4 border-transparent bg-transparent backdrop-blur-none shadow-none"
         }`}
       >
@@ -115,7 +115,7 @@ export default function Navbar({ isDark, onToggleTheme }) {
           aria-label="Alju Sabu, back to top"
           tabIndex={scrolled ? -1 : 0}
           aria-hidden={scrolled}
-          className={`overflow-hidden whitespace-nowrap rounded-md text-base font-bold tracking-tight text-slate-900 dark:text-white transition-all duration-300 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500 ${
+          className={`overflow-hidden whitespace-nowrap rounded-md text-base font-bold tracking-tight text-stone-900 dark:text-white transition-all duration-300 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500 ${
             scrolled
               ? "max-w-0 opacity-0 mr-0"
               : "max-w-40 opacity-100 mr-4 px-1"
@@ -147,7 +147,7 @@ export default function Navbar({ isDark, onToggleTheme }) {
               scrolled ? "ml-3 max-w-32 opacity-100" : "ml-0 max-w-0 opacity-0"
             }`}
           >
-            <span className="mr-2 h-4 w-px bg-slate-300 dark:bg-zinc-700" />
+            <span className="mr-2 h-4 w-px bg-stone-300 dark:bg-neutral-700" />
             <a
               href={GITHUB_URL}
               target="_blank"
@@ -212,7 +212,7 @@ export default function Navbar({ isDark, onToggleTheme }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.98 }}
             transition={{ duration: 0.15 }}
-            className="pointer-events-auto mt-2 w-full max-w-sm rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white/95 dark:bg-zinc-900/95 p-3 shadow-xl shadow-black/10 backdrop-blur-xl lg:hidden"
+            className="pointer-events-auto mt-2 w-full max-w-sm rounded-2xl border border-stone-300 dark:border-white/20 bg-white/95 dark:bg-black/95 p-3 shadow-xl shadow-black/10 dark:shadow-black/60 backdrop-blur-xl lg:hidden"
           >
             <div className="flex flex-col gap-1">
               {NAV_LINKS.map(({ label, id }) => (
@@ -228,7 +228,7 @@ export default function Navbar({ isDark, onToggleTheme }) {
               ))}
             </div>
 
-            <div className="mt-3 flex items-center justify-between border-t border-slate-200 dark:border-white/10 pt-3">
+            <div className="mt-3 flex items-center justify-between border-t border-stone-200 dark:border-white/10 pt-3">
               <div className="flex items-center gap-1">
                 <a
                   href={GITHUB_URL}

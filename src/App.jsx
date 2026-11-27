@@ -37,11 +37,11 @@ function App() {
           <section
             key={id}
             id={id}
-            className="flex min-h-screen items-center justify-center border-b border-slate-200 dark:border-neutral-800"
+            className="flex min-h-screen items-center justify-center border-b border-stone-200 dark:border-neutral-800"
           >
             <h2 className="text-4xl font-extrabold capitalize">
               {id}{" "}
-              <span className="font-mono text-sm font-normal text-slate-500 dark:text-neutral-500">
+              <span className="font-mono text-sm font-normal text-stone-500 dark:text-neutral-500">
                 (temporary)
               </span>
             </h2>
