@@ -4,8 +4,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sans:
+    "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 @layer base {
@@ -15,12 +18,11 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 dark:bg-[#090a0f] dark:text-neutral-100
-           font-sans antialiased overflow-x-hidden transition-colors duration-200;
+    @apply bg-white text-stone-900 dark:bg-black dark:text-white font-sans antialiased overflow-x-hidden transition-colors duration-200;
   }
 
   ::selection {
-    @apply bg-blue-500 text-white;
+    @apply bg-blue-600 text-white;
   }
 }
 
@@ -32,6 +34,6 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.3);
+  background: rgba(120, 113, 108, 0.4);
   border-radius: 9999px;
 }
