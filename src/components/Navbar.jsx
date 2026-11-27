@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { personalInfo } from "../data/personalInfo";
 import {
   FiSun,
   FiMoon,
@@ -10,9 +11,11 @@ import {
   FiFileText,
 } from "react-icons/fi";
 
-const GITHUB_URL = "https://github.com/AljuSabu";
-const LINKEDIN_URL = "https://www.linkedin.com/in/aljusabu-dev/";
-const RESUME_URL = "/Alju_Sabu_Full_Stack_Developer.pdf"; // file must be inside /public
+const {
+  github: GITHUB_URL,
+  linkedin: LINKEDIN_URL,
+  resumeUrl: RESUME_URL,
+} = personalInfo;
 
 const NAV_LINKS = [
   { label: "About", id: "about" },
@@ -22,7 +25,7 @@ const NAV_LINKS = [
   { label: "Contact", id: "contact" },
 ];
 
-const SCROLL_THRESHOLD = 80; // px scrolled before the bar turns into the pill
+const SCROLL_THRESHOLD = 80;
 
 const iconBtn =
   "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-slate-600 dark:text-zinc-400 hover:bg-slate-900/5 dark:hover:bg-white/10 hover:text-slate-900 dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500";
