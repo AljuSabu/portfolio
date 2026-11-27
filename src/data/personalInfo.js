@@ -39,7 +39,7 @@ export const personalInfo = {
     { label: "Languages", value: "English, Malayalam" },
   ],
 
-  // icon must be one of: shield, card, server, layout (see ICONS in About.jsx)
+  // icon must be one of: shield, card, server, layout
   highlights: [
     {
       icon: "shield",
@@ -60,6 +60,64 @@ export const personalInfo = {
       icon: "layout",
       title: "Responsive UI",
       text: "Responsive interfaces and admin dashboards built with React and Tailwind CSS.",
+    },
+  ],
+
+  // ---------- Skills section ----------
+  skills: [
+    {
+      title: "Frontend",
+      layout: "wide",
+      items: [
+        { name: "React.js", icon: "react" },
+        { name: "Next.js", icon: "next" },
+        { name: "TypeScript", icon: "typescript" },
+        { name: "Tailwind CSS", icon: "tailwind" },
+        { name: "HTML5", icon: "html" },
+        { name: "CSS3", icon: "css" },
+        { name: "JavaScript (ES6+)", icon: "javascript" },
+      ],
+    },
+    {
+      title: "Backend",
+      layout: "narrow",
+      items: [
+        { name: "Node.js", icon: "node" },
+        { name: "Express.js", icon: "express" },
+        { name: "REST APIs", icon: "api" },
+        { name: "Next.js API Routes", icon: "route" },
+      ],
+    },
+    {
+      title: "Database",
+      layout: "narrow",
+      items: [
+        { name: "MongoDB", icon: "mongodb" },
+        { name: "Mongoose", icon: "mongoose" },
+      ],
+    },
+    {
+      title: "Tools & Platforms",
+      layout: "wide",
+      items: [
+        { name: "Git", icon: "git" },
+        { name: "GitHub", icon: "github" },
+        { name: "Postman", icon: "postman" },
+        { name: "VS Code", icon: "vscode" },
+        { name: "Vercel", icon: "vercel" },
+        { name: "Render", icon: "render" },
+        { name: "Netlify", icon: "netlify" },
+      ],
+    },
+    {
+      title: "Other",
+      layout: "full",
+      items: [
+        { name: "JWT Authentication", icon: "jwt" },
+        { name: "Razorpay Integration", icon: "razorpay" },
+        { name: "Context API", icon: "context" },
+        { name: "Responsive Design", icon: "responsive" },
+      ],
     },
   ],
 };
