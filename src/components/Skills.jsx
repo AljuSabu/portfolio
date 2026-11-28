@@ -89,9 +89,7 @@ export default function Skills() {
                   delay: (i % 3) * 0.1,
                   ease: "easeOut",
                 }}
-                className={`rounded-2xl border border-stone-300 bg-stone-50 p-6 dark:border-neutral-800 dark:bg-neutral-950 ${
-                  LAYOUT[layout] ?? ""
-                }`}
+                className={`card-3d p-6 ${LAYOUT[layout] ?? ""}`}
               >
                 <div className="flex items-baseline justify-between gap-4">
                   <h3 className="text-lg font-bold text-stone-950 dark:text-white">
@@ -108,7 +106,7 @@ export default function Skills() {
                     return (
                       <li
                         key={name}
-                        className="inline-flex cursor-default items-center gap-2 rounded-full border border-stone-300 bg-white px-3.5 py-2 text-sm font-medium text-stone-800 transition-colors hover:border-stone-900 hover:bg-stone-900 hover:text-white dark:border-neutral-700 dark:bg-black dark:text-neutral-200 dark:hover:border-white dark:hover:bg-white dark:hover:text-black"
+                        className="inline-flex cursor-default items-center gap-2 rounded-full border border-stone-300 bg-white px-3.5 py-2 text-sm font-medium text-stone-800 shadow-[0_1px_2px_rgba(28,25,23,0.12),inset_0_1px_0_rgba(255,255,255,1)] transition-all duration-200 hover:-translate-y-0.5 hover:border-stone-900 hover:bg-stone-900 hover:text-white hover:shadow-[0_6px_12px_-2px_rgba(28,25,23,0.35)] dark:border-neutral-700 dark:bg-black dark:text-neutral-200 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_1px_2px_rgba(0,0,0,0.8)] dark:hover:border-white dark:hover:bg-white dark:hover:text-black dark:hover:shadow-[0_6px_14px_-2px_rgba(255,255,255,0.25)]"
                       >
                         <Icon size={16} aria-hidden="true" />
                         {name}
