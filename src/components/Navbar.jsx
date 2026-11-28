@@ -31,7 +31,7 @@ const iconBtn =
   "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-stone-600 dark:text-neutral-400 hover:bg-stone-900/5 dark:hover:bg-white/10 hover:text-stone-900 dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500";
 
 const resumeBtn =
-  "inline-flex items-center gap-1.5 rounded-full bg-stone-900 px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-stone-700 active:bg-stone-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:bg-white dark:text-black dark:hover:bg-neutral-200 dark:active:bg-neutral-300 dark:focus-visible:ring-offset-black";
+  "items-center gap-1.5 rounded-full bg-stone-900 px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-stone-700 active:bg-stone-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:bg-white dark:text-black dark:hover:bg-neutral-200 dark:active:bg-neutral-300 dark:focus-visible:ring-offset-black";
 
 export default function Navbar({ isDark, onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
@@ -253,7 +253,7 @@ export default function Navbar({ isDark, onToggleTheme }) {
                 href={RESUME_URL}
                 target="_blank"
                 rel="noreferrer"
-                className={resumeBtn}
+                className={`inline-flex ${resumeBtn}`}
               >
                 <FiFileText size={14} />
                 Resume
